@@ -1,25 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <style media="screen">
-      #twitch-embed {
-        position: relative;
-        margin: 10px;
-        left: 25%;
-      }
-    </style>
-  </head>
+<html lang="en" dir="ltr" onload="consentAlert()">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/source-sans-pro" type="text/css"/>
+
+  <title>Viewer Hub</title>
+  <style media="screen">
+  body {
+    position: relative;
+    width: 100%;
+    left: 25%;
+    font-family: 'SourceSansProRegular';
+    overflow-y: scroll;
+  }
+  .info {
+    position: relative;
+    display: block;
+    width: 50%;
+    top: 10px;
+    margin-left: 10px;
+    margin-bottom: 3%;
+  }
+  #twitch-embed {
+    position: relative;
+    margin-left: 10px;
+  }
+  #consent {
+    position: relative;
+    margin-left: 10px;
+    width: 50%;
+    height: 1000px;
+    margin-top: 50px;
+  }
+  #form {
+    position: relative;
+    margin-left: 10px;
+    margin-top: 50px;
+    width: 50%;
+  }
+  </style>
+</head>
   <body>
-    <!-- Add a placeholder for the Twitch embed -->
-    <div id="twitch-embed"></div>
+    <div class="info">
+      <h1>ADCS Live Stream Viewer Hub</h1>
+      <p>
+        Hello!
+        <br><br>
+        This is the Augmented Design Capability Studio's live stream design Viewer Hub.
+        <br><br>
+        <i>
+          All live streams viewed through this webpage are a part of a research study
+          conducted by the ADCS at Carnegie Mellon University. Below is the consent form for your
+          participation in this livestream. Please read it and confirm your consent.
+          <b>DISCLAIMER:</b> By choosing to remain on this stream you consent to the terms below and may be recorded.
+        </i>
+        <br><br>
+        Thank you,
+        <br>ADCS Live Stream Design Team
+      </p>
+    </div>
 
-    <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <!-- Twitch embed -->
+      <!-- Add a placeholder for the Twitch embed -->
+      <div id="twitch-embed"></div>
 
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
-    <script type="text/javascript">
+      <!-- consent form -->
+      <iframe id="consent"
+        src="https://docs.google.com/document/d/e/2PACX-1vTqzo9d1wrUhnplu0yvgGIQucI9R2Kq12o7uqY3V8qVu9gVyHofRhiqPZfMAgdEsAnVZYLiHvnEVPdw/pub?embedded=true">
+      </iframe>
+      <!-- Post session Viewer questionnaire -->
+      <iframe id="form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScMEkE6hlk8v7KFCioS9_MPQwsC0ZkARgyhzCNQJQVUcSRoOw/viewform?embedded=true"
+        width="50%"
+        height="1000">
+        Loading…
+      </iframe>
+
+      <!-- Load the Twitch embed script -->
+      <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+      <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
+      <script type="text/javascript">
       var embed = new Twitch.Embed("twitch-embed", {
         width: "50%",
         height: 480,
@@ -34,6 +95,6 @@
         var player = embed.getPlayer();
         player.play();
       });
-    </script>
+      </script>
   </body>
 </html>
