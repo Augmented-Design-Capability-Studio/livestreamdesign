@@ -156,7 +156,7 @@ export default function App() {
         <iframe id="twitch-chat-embed"
           src="http://twitch.tv/adcs_livestreamdesign/chat?popout="
           height="500"
-          width="350">
+          width="400">
         </iframe>
         </div>
       </Draggable>
