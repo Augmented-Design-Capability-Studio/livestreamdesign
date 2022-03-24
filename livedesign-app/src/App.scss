@@ -49,16 +49,26 @@
 
 .twitchwrapper {
   position: fixed;
-  padding: 10px;
+  right: 10px;
+  top: 10px;
+  padding: 5px;
+  padding-top: 5px;
   width: 490px;
-  background-color: red;
+  background-color: gray;
   z-index: 99;
+  border-radius: 10px;
 }
-.chatwrapper {
+
+.mirowrapper {
   position: fixed;
+  display: grid;
+  top: 10px;
+  left: 10px;
   padding: 10px;
-  width: 410px;
-  right: 0;
-  background-color: red;
-  z-index: 100;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.drag {
+  position: relative;
 }
